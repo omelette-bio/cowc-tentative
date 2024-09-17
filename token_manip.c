@@ -51,6 +51,14 @@ void print_type( tokentype tt )
   if ( tt == RIGHT_MOVE ) printf("right ");
   if ( tt == INCR ) printf("++ ");
   if ( tt == DECR ) printf("-- ");
+  if ( tt == LOOP_START ) printf("[ ");
+  if ( tt == LOOP_END ) printf("] ");
+  if ( tt == READ_INT ) printf("read_i ");
+  if ( tt == READ_ASCII ) printf("read_a ");
+  if ( tt == EXEC ) printf("exec ");
+  if ( tt == RESET ) printf("reset ");
+  if ( tt == REG_MANIP ) printf("reg ");
+  if ( tt == PRINT ) printf("print ");
 }
 
 void print_liste()
@@ -61,4 +69,9 @@ void print_liste()
     print_type( tl_t->type );
     tl_t = tl_t->suivant;
   }
+}
+
+tokenliste* get_liste() 
+{
+  return tl;
 }

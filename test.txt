@@ -1,0 +1,1 @@
+++ right right ++ right right ++ left left left left [ print right right reg left reg right right right reg left reg [ -- left left [ -- left ++ right ] right reg left reg right right ] right ++ left left left left reg right right reg left left ] 

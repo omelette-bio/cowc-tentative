@@ -3,6 +3,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include "parser.h"
+#include "analyser_semantique.h"
 
 int main( int argc, char* argv[] )
 {
@@ -22,6 +23,8 @@ int main( int argc, char* argv[] )
   print_liste();
 
   printf("\n");
+
+  analyse_semantique();
 //  tokentype tt1 = LEFT_MOVE;
 //  ajout_token( tt1 );
 //  tokentype tt2 = RIGHT_MOVE;
