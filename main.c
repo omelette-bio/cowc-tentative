@@ -4,6 +4,8 @@
 #include <unistd.h>
 #include "parser.h"
 #include "analyser_semantique.h"
+#include "gen_code.h"
+
 
 int main( int argc, char* argv[] )
 {
@@ -20,11 +22,13 @@ int main( int argc, char* argv[] )
   sz = read(file_input, c, 2048);
   
   parse_chaine( c );
-  print_liste();
+//  print_liste();
 
-  printf("\n");
+//  printf("\n");
 
   analyse_semantique();
+
+  generer_code();
 //  tokentype tt1 = LEFT_MOVE;
 //  ajout_token( tt1 );
 //  tokentype tt2 = RIGHT_MOVE;
