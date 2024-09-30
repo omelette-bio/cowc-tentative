@@ -27,20 +27,26 @@ void ajout_token( tokentype tt )
     }    
     
     tl->type = tt;
+    tl->qty = 1;
     tl->suivant = NULL;
   }
   else 
   {
-    p->suivant = ( tokenliste* ) malloc(sizeof(tokenliste));
-    
-    if ( p == NULL )
+    if ( p->type == tt ) p->qty++;
+    else 
     {
-      fprintf(stderr, "erreur de malloc\n");
-      exit(1);
-    }
+      p->suivant = ( tokenliste* ) malloc(sizeof(tokenliste));
     
-    p->suivant->type = tt;
-    p->suivant->suivant = NULL;
+      if ( p == NULL )
+      {
+        fprintf(stderr, "erreur de malloc\n");
+        exit(1);
+      }
+    
+      p->suivant->type = tt;
+      p->suivant->qty = 1;
+      p->suivant->suivant = NULL;
+    }
   }
 }
 
@@ -67,6 +73,7 @@ void print_liste()
   while( tl_t != NULL )
   {
     print_type( tl_t->type );
+    printf("%d ", tl_t->qty);
     tl_t = tl_t->suivant;
   }
 }

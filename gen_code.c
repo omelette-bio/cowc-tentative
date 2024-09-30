@@ -24,10 +24,10 @@ void generer_code()
   while ( tl_t != NULL )
   {
     print_tab(indentation_level);
-    if ( tl_t->type == LEFT_MOVE ) printf("i--;\n");
-    else if ( tl_t->type == RIGHT_MOVE ) printf("i++;\n");
-    else if ( tl_t->type == INCR ) printf("arr[i]++;\n");
-    else if ( tl_t->type == DECR ) printf("arr[i]--;\n");
+    if ( tl_t->type == LEFT_MOVE ) printf("i-=%d;\n", tl_t->qty);
+    else if ( tl_t->type == RIGHT_MOVE ) printf("i+=%d;\n", tl_t->qty);
+    else if ( tl_t->type == INCR ) printf("arr[i]+=%d;\n", tl_t->qty);
+    else if ( tl_t->type == DECR ) printf("arr[i]-=%d;\n", tl_t->qty);
     else if ( tl_t->type == LOOP_START ) 
     {
       printf("while ( arr[i] != 0 )\n");

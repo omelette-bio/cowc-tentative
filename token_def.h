@@ -10,5 +10,6 @@ typedef enum _tokentype
 typedef struct _tokenliste 
 {
   tokentype type;
+  int qty;
   struct _tokenliste* suivant;
 } tokenliste;
